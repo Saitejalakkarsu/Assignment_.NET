@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Product Name:
+    <input type="text" id="t1" />
+    <br/>
+    unit price:
+    <input type="text" id="t2" />
+    <br/>
+    Quantity:
+    <input type="text" id="t3" />
+    <br/>
+    <input type="button" onclick="f1()" value="get" />
+     
+    <br/>
+    Total Amount:<p id="r1"></p>
+    
+
+    <script>
+        
+        function f1(){
+            let price=parseInt(document.getElementById("t2").value);
+            let quant=parseInt(document.getElementById("t3").value);
+            let tm=document.getElementById("r1");
+            let total=price*quant;
+            if(quant>10 && quant<20){
+                total=total-total*(0.1);
+            }
+            else if(quant>20 && quant<30 ){
+                total=total-total*(0.2);
+            }
+            else if (quant>30){
+                total=total-total*(0.3);
+            }
+            tm.innerHTML=total;
+        }
+    </script>
+</body>
+</html>
